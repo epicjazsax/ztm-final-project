@@ -3,16 +3,21 @@ const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
 const knex = require('knex');
 
-const register = require('./controllers/register');
-const signIn = require('./controllers/signin');
-const profile = require('./controllers/profile');
-const image = require('./controllers/image');
+import handleRegister from './controllers/register';
+import handleSignIn from './controllers/signin';
+import handleProfile from './controllers/profile';
+import handleImage from './controllers/image';
 
 const db = knex({
   client: 'pg',
   connection: {
     connectionString: process.env.DATABASE_URL,
-    ssl: true
+    ssl: { rejectUnauthorized: false },
+    host: process.env.DATABASE_HOST,
+    port: 5432,
+    user: process.env.DATABASE_USER,
+    password: process.env.DATABASE_PW,
+    database: process.env.DATABASE_DB
   },
 });
 
@@ -27,13 +32,13 @@ app.use(cors());
 
 app.get('/', (req, res) => { res.send('success') })
 
-app.post('/signin', signIn.handleSignIn(db, bcrypt))
+app.post('/signin', handleSignIn(db, bcrypt))
 
-app.post('/register', register.handleRegister(db, bcrypt))
+app.post('/register', handleRegister(db, bcrypt))
 
-app.get('/profile/:id', profile.handleProfile(db))
+app.get('/profile/:id', handleProfile(db))
 
-app.put('/image',image.handleImage(db))
+app.put('/image', handleImage(db))
 
 app.listen(process.env.PORT || 3100, () => {
 	console.log('app is running');
