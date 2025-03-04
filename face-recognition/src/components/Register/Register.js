@@ -19,7 +19,7 @@ const Register = ({ onRouteChange, loadUser }) => {
 
 	const onSubmitRegister = () => {
 		console.log(`email: ${email}, password: ${password}`)
-		fetch('http://localhost:3100/register', {
+		fetch('https://ztm-final-project-xzfw.onrender.com/register', {
 			method: 'post',
 			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify({

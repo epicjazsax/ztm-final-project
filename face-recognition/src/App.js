@@ -111,7 +111,7 @@ function App() {
     .then(response => response.json())
       .then(response => {
         if (response) {
-          fetch('http://localhost:3100/image', {
+          fetch('https://ztm-final-project-xzfw.onrender.com/image', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -122,6 +122,7 @@ function App() {
             .then(count => {
               (Object.assign(user, { entries: count }))
             })
+            .catch(console.log)
           }
         displayFaceBox(calculateFaceLocation(response))
       })
