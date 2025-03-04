@@ -1,7 +1,7 @@
-const express = require('express');
-const bcrypt = require('bcrypt-nodejs');
-const cors = require('cors');
-const knex = require('knex');
+import express from 'express';
+import bcrypt from 'bcrypt';
+import cors from 'cors';
+import knex from 'knex';
 
 import handleRegister from './controllers/register.js';
 import handleSignIn from './controllers/signin.js';
