@@ -41,6 +41,6 @@ app.get('/profile/:id', handleProfile(db))
 
 app.put('/image', handleImage(db))
 
-app.listen(process.env.PORT || 3100, () => {
+app.listen(process.env.PORT || 5432, () => {
 	console.log('app is running');
 })
