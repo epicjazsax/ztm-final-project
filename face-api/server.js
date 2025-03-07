@@ -12,13 +12,13 @@ import handleImage from './controllers/image.js';
 const db = knex({
   client: 'pg',
   connection: {
-    connectionString: process.env.DATABASE_URL,
+    connectionString: 'postgresql://ztm_smart_brain_user:qvOsaO26Iqc0rJGTUAZo7pwbod96dTu5@dpg-cv33ecbqf0us7383kaig-a/ztm_smart_brain',
     ssl: { rejectUnauthorized: false },
-    host: process.env.DATABASE_HOST,
-    port: 5432,
-    user: process.env.DATABASE_USER,
-    password: process.env.DATABASE_PW,
-    database: process.env.DATABASE_DB
+    host: 'dpg-cv33ecbqf0us7383kaig-a',
+    port: 5432
+    // user: process.env.DATABASE_USER,
+    // password: process.env.DATABASE_PW,
+    // database: process.env.DATABASE_DB
   },
 });
 
