@@ -29,9 +29,7 @@ db.select('*').from('users').then(data => {
 const app = express();
 
 app.use(express.json());
-app.use(cors({
-  credentials: true
-}));
+app.use(cors());
 
 app.get('/', (req, res) => { res.send('success') })
 
