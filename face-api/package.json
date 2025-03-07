@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "bcrypt-nodejs": "^0.0.3",
+    "bcryptjs": "3.0.2",
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "knex": "^3.1.0",

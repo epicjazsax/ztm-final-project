@@ -1,4 +1,5 @@
-const bcrypt = require('bcrypt-nodejs');
+// const bcrypt = require('bcrypt-nodejs');
+import bcrypt from 'bcryptjs';
 import express from 'express';
 import cors from 'cors';
 import knex from 'knex';
