@@ -21,6 +21,7 @@ const Register = ({ onRouteChange, loadUser }) => {
 		console.log(`email: ${email}, password: ${password}`)
 		fetch('https://ztm-final-project-xzfw.onrender.com/register', {
 			method: 'post',
+			credentials: 'include',
 			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify({
 				name: name,
