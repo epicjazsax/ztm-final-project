@@ -18,7 +18,7 @@ const Register = ({ onRouteChange, loadUser }) => {
 	}
 
 	const onSubmitRegister = () => {
-		// console.log(`email: ${email}, password: ${password}`)
+		console.log(`email: ${email}, password: ${password}`)
 		fetch('https://cors-anywhere.herokuapp.com/https://ztm-final-project-xzfw.onrender.com/register', {
 			method: 'post',
 			headers: {'Content-Type': 'application/json'},
