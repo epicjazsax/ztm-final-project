@@ -39,7 +39,7 @@ const Register = ({ onRouteChange, loadUser }) => {
 				name: name,
 				email: email,
 				password: password
-			}))
+			}).json())
 	}
 
 	return (
