@@ -25,7 +25,9 @@ const Register = ({ onRouteChange, loadUser }) => {
 			email: email,
 			password: password
 		}
+
 		const myStr = JSON.stringify(myObj);
+		console.log(JSON.parse('{"foo": "bar"}'))
 		console.log(myObj);
 		console.log(JSON.stringify({
 			name: name,
@@ -37,11 +39,12 @@ const Register = ({ onRouteChange, loadUser }) => {
 			email: email,
 			password: password
 		}));
-		console.log(JSON.stringify({
+
+		console.log(JSON.parse(JSON.stringify({
 			name: name,
 			email: email,
 			password: password
-		}).json());
+		})));
 
 		console.log(JSON.stringify(myObj));
 		console.log(JSON.stringify(myObj).json());
