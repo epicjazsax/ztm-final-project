@@ -26,7 +26,7 @@ const Register = ({ onRouteChange, loadUser }) => {
 		// 	password: password
 		// })));
 
-		const register = fetch('https://cors-anywhere.herokuapp.com/https://ztm-final-project-xzfw.onrender.com/register', {
+		fetch('https://cors-anywhere.herokuapp.com/https://ztm-final-project-xzfw.onrender.com/register', {
 			method: 'post',
 			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify({
@@ -42,15 +42,8 @@ const Register = ({ onRouteChange, loadUser }) => {
 					loadUser(user);
 					onRouteChange('home')
 				}
-			});
-
-		const printResponse = () => {
-			register.then((data) => {
-				console.log(data)
-			});
-		};
-
-		printResponse();
+			})
+			.catch(err => console.log(err));
 	}
 
 	return (
