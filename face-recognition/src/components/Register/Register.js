@@ -19,6 +19,29 @@ const Register = ({ onRouteChange, loadUser }) => {
 
 	const onSubmitRegister = () => {
 		console.log(`email: ${email}, password: ${password}`);
+
+		const myObj = {
+			name: name,
+			email: email,
+			password: password
+		}
+		const myStr = JSON.stringify(myObj);
+		console.log(myObj);
+		console.log(JSON.stringify({
+			name: name,
+			email: email,
+			password: password
+		}));
+		console.log(JSON.stringify({
+			name: name,
+			email: email,
+			password: password
+		}).json());
+		console.log(JSON.stringify(myObj));
+		console.log(JSON.stringify(myObj).json());
+		console.log(myStr);
+		console.log(myStr.json());
+
 		fetch('https://cors-anywhere.herokuapp.com/https://ztm-final-project-xzfw.onrender.com/register', {
 			method: 'post',
 			headers: {'Content-Type': 'application/json'},
@@ -35,27 +58,7 @@ const Register = ({ onRouteChange, loadUser }) => {
 					onRouteChange('home')
 				}
 			})
-			const myObj = {
-				name: name,
-				email: email,
-				password: password
-			}
-			const myStr = JSON.stringify(myObj);
-			console.log(myObj);
-			console.log(JSON.stringify({
-				name: name,
-				email: email,
-				password: password
-			}));
-			console.log(JSON.stringify({
-				name: name,
-				email: email,
-				password: password
-			}).json());
-			console.log(JSON.stringify(myObj));
-			console.log(JSON.stringify(myObj).json());
-			console.log(myStr);
-			console.log(myStr.json());
+
 
 	}
 
