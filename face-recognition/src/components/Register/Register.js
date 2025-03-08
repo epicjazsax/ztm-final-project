@@ -25,25 +25,27 @@ const Register = ({ onRouteChange, loadUser }) => {
 		// 	email: email,
 		// 	password: password
 		// })));
-
-		fetch('https://cors-anywhere.herokuapp.com/https://ztm-final-project-xzfw.onrender.com/register', {
-			method: 'post',
-			headers: {'Content-Type': 'application/json'},
-			body: JSON.stringify({
-				name: name,
-				email: email,
-				password: password
+		try {
+			fetch('https://cors-anywhere.herokuapp.com/https://ztm-final-project-xzfw.onrender.com/register', {
+				method: 'post',
+				headers: {'Content-Type': 'application/json'},
+				body: JSON.stringify({
+					name: name,
+					email: email,
+					password: password
+				})
 			})
-		})
-			.then(res => res.json())
-			.then(console.log())
-			.then(user => {
-				if (user.id) {
-					loadUser(user);
-					onRouteChange('home')
-				}
-			})
-			.catch(err => console.log(err));
+				.then(res => res.json())
+				.then(console.log())
+				.then(user => {
+					if (user.id) {
+						loadUser(user);
+						onRouteChange('home')
+					}
+				})
+		} catch (e) {
+			console.error(e, e.stack);
+		}
 	}
 
 	return (
