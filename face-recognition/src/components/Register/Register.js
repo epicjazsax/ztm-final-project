@@ -35,11 +35,8 @@ const Register = ({ onRouteChange, loadUser }) => {
 				password: password
 			})
 		})
-			.then(res => {
-				console.log(res);
-				console.log(res.json());
-				return res.json()
-			})
+			.then(res => res.json())
+			.then(console.log())
 			.then(user => {
 				if (user.id) {
 					loadUser(user);
