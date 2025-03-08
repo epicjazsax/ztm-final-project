@@ -32,11 +32,17 @@ const Register = ({ onRouteChange, loadUser }) => {
 			email: email,
 			password: password
 		}));
+		console.log(typeof JSON.stringify({
+			name: name,
+			email: email,
+			password: password
+		}));
 		console.log(JSON.stringify({
 			name: name,
 			email: email,
 			password: password
 		}).json());
+
 		console.log(JSON.stringify(myObj));
 		console.log(JSON.stringify(myObj).json());
 		console.log(myStr);
