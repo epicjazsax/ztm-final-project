@@ -23,9 +23,9 @@ const Register = ({ onRouteChange, loadUser }) => {
 			method: 'post',
 			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify({
-				'name': name,
-				'email': email,
-				'password': password
+				name: name,
+				email: email,
+				password: password
 			})
 		})
 			.then(res => res.json())
@@ -35,6 +35,11 @@ const Register = ({ onRouteChange, loadUser }) => {
 					onRouteChange('home')
 				}
 			})
+			console.log(JSON.stringify({
+				name: name,
+				email: email,
+				password: password
+			}))
 	}
 
 	return (
