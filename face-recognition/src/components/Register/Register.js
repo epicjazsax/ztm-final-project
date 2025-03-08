@@ -42,10 +42,10 @@ const Register = ({ onRouteChange, loadUser }) => {
 			}
 			const myStr = JSON.stringify(myObj);
 			console.log(myObj);
-			console.log(myStr);
-			console.log(myStr.json());
 			console.log(JSON.stringify(myObj));
 			console.log(JSON.stringify(myObj).json());
+			console.log(myStr);
+			console.log(myStr.json());
 
 	}
 
